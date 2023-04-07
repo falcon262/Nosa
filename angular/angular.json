@@ -77,9 +77,12 @@
                 "inject": false,
                 "bundleName": "ng-zorro-antd-tree"
               },
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/TemplateData/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/Build/Webgl.loader.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -64,6 +64,7 @@ const routes: Routes = [
         m => m.GdprCookieConsentModule
       ),
   },
+  { path: 'chats', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
 ];
 
 @NgModule({

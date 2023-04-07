@@ -1,1 +1,29 @@
 /* Styles for the home component */
+.full-height{
+    min-height: 100%;
+}
+
+.text-header{
+ display: flex;
+ justify-content: center;
+ align-content: center;
+ flex-direction: column;
+}
+
+.learn-more{
+    background-color: #ffb600;
+    border-color: #ffb600;
+    color: white;
+    padding: 14px;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.talk{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #d04a02;
+    padding: 14px;
+    font-weight: bolder;
+    font-size: larger;
+}

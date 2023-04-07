@@ -9,3 +9,43 @@
   --lpx-logo: url('/assets/images/logo/logo-dark.png');
   --lpx-logo-icon: url('/assets/images/logo/icon-dark.png');
 }
+
+.container, .container-lg, .container-md, .container-sm {
+  max-width: 100%;
+  height: 100%;
+}
+
+html{
+  height: 93%;
+}
+
+html body{
+  height: 93%;
+  background: url(assets/Simple_Shiny.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.navbar{
+  margin-bottom: 0rem !important;
+}
+
+.mx-auto {
+  margin-right: 0px!important;
+  margin-left: auto!important;
+}
+
+.bg-landing{
+  background: url(assets/Simple_Shiny.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  margin-bottom: 0rem !important;
+  background-color: #00000000 !important;
+}

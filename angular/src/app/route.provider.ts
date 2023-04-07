@@ -23,6 +23,13 @@ function configureRoutes(routes: RoutesService) {
         layout: eLayoutType.application,
         requiredPolicy: 'Nosa.Dashboard.Host  || Nosa.Dashboard.Tenant',
       },
+      {
+        path: '/chats',
+        name: 'Chat',
+        iconClass: 'fas fa-headset',
+        order: 2,
+        layout: eLayoutType.application
+      },
     ]);
   };
 }

@@ -21,12 +21,17 @@ import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { OpeniddictproConfigModule } from '@volo/abp.ng.openiddictpro/config';
 import { FeatureManagementModule } from '@abp/ng.feature-management';
-import { AbpOAuthModule } from '@abp/ng.oauth'
+import { AbpOAuthModule } from '@abp/ng.oauth';
+import { LogoComponent } from './logo/logo.component';
+import { RoutesComponent } from './routes/routes.component'
+import { SharedModule } from './shared/shared.module';
+import { NavItemsComponent } from './nav-items/nav-items.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LogoComponent, RoutesComponent, NavItemsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    SharedModule,
     AppRoutingModule,
     CoreModule.forRoot({
       environment,
