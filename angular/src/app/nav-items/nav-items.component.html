@@ -34,10 +34,10 @@
         </div>
       </div>
     </li>
-    <li class="nav-item d-flex align-items-center" style="margin-right: 30px;">
-      <button type="button" class="btn btn-light" style="border-radius: 50px; height: 60px; width: 60px; color: #d04a02; font-size: 21px;"><i class="fa fa-user" aria-hidden="true"></i></button>
-    </li>
-    <!-- <li class="nav-item d-flex align-items-center">
+    <!-- <li class="nav-item d-flex align-items-center" style="margin-right: 30px;">
+      <button type="button" class="btn btn-light" routerLink="/users" style="border-radius: 50px; height: 60px; width: 60px; color: #d04a02; font-size: 21px;"><i class="fa fa-user" aria-hidden="true"></i></button>
+    </li> -->
+    <li class="nav-item d-flex align-items-center" style="margin-right: 40px; margin-left: 10px;">
       <ng-template #loginBtn>
         <a role="button" class="nav-link pointer" (click)="navigateToLogin()">{{
           'AbpAccount::Login' | abpLocalization
@@ -46,10 +46,12 @@
       <div
         *ngIf="(currentUser$ | async)?.isAuthenticated; else loginBtn"
         ngbDropdown
-        class="dropdown"
+        class="dropdown btn btn-light"
         #currentUserDropdown="ngbDropdown"
         display="static"
+        style="border-radius: 50px; height: 60px; width: 60px; color: #d04a02; font-size: 21px;"
       >
+      <i class="fa fa-user" aria-hidden="true" style="margin-top: 12px"></i>
         <a
           ngbDropdownToggle
           class="nav-link"
@@ -60,25 +62,25 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <small *ngIf="(selectedTenant$ | async)?.name as tenantName"
+          <!-- <small *ngIf="(selectedTenant$ | async)?.name as tenantName"
             ><i>{{ tenantName }}</i
             >\</small
           >
-          <strong>{{ (currentUser$ | async)?.userName }}</strong>
+          <strong>{{ (currentUser$ | async)?.userName }}</strong> -->
         </a>
         <div
           class="dropdown-menu dropdown-menu-right border-0 shadow-sm"
           aria-labelledby="dropdownMenuLink"
           [class.d-block]="smallScreen && currentUserDropdown.isOpen()"
         >
-          <a class="dropdown-item pointer" (click)="navigateToManageProfile()"
-            ><i class="fa fa-cog mr-1"></i>{{ 'AbpAccount::MyAccount' | abpLocalization }}</a
+          <a class="dropdown-item pointer" routerLink="/users"
+            ><i class="fa fa-cog mr-1"></i> {{ 'AbpAccount::MyAccount' | abpLocalization }}</a
           >
           <a class="dropdown-item" href="javascript:void(0)" (click)="logout()"
-            ><i class="fa fa-power-off mr-1"></i>{{ 'AbpUi::Logout' | abpLocalization }}</a
+            ><i class="fa fa-power-off mr-1"></i> {{ 'AbpUi::Logout' | abpLocalization }}</a
           >
         </div>
       </div>
-    </li> -->
+    </li>
   </ul>
   

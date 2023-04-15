@@ -26,6 +26,9 @@ import { LogoComponent } from './logo/logo.component';
 import { RoutesComponent } from './routes/routes.component'
 import { SharedModule } from './shared/shared.module';
 import { NavItemsComponent } from './nav-items/nav-items.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [AppComponent, LogoComponent, RoutesComponent, NavItemsComponent],
   imports: [
@@ -57,6 +60,9 @@ ThemeSharedModule.forRoot(),
         cookiePolicyUrl: 'gdpr-cookie-consent/cookie',
       },
     }),
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [APP_ROUTE_PROVIDER],
   bootstrap: [AppComponent],

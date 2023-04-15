@@ -1,0 +1,89 @@
+<mat-card class="mx-5 my-3">
+    <mat-card-content>
+        <div class="row">
+            <div class="col">
+                <div class="text-dark mat-display-1 m-0 p-3">
+                    <button
+                      style="color: white; background-color: #d04a02; box-shadow: 0 0 0 5px #dedede;"
+                      mat-mini-fab
+                      aria-label="icon-button with user icon"
+                    >
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person" style="font-size: 25px;"></mat-icon>
+        
+                    </button>
+                    <span class="ml-3 header-text">User | <span style="font-weight: lighter; font-size: 17px;">{{userName}}</span></span>
+                </div>
+            </div>
+
+            <!-- <div class="col">
+                <div class="text-dark mat-display-1 m-0 p-3">
+                    <button mat-raised-button style="float: right; color: white; background-color: #d04a02;"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>Edit User</button>
+                </div>
+            </div> -->
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<div class="container-fluid">
+    <mat-card class="mx-5">
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <div class="text-dark mat-display-1 mx-3 p-2" >
+                        <div style="justify-content: center; display: flex;">
+                            <button
+                            style="color: white; background-color: #d04a02; box-shadow: 0 0 0 5px #dedede; width: 200px; height: 200px;"
+                            mat-mini-fab
+                            aria-label="icon-button with user icon"
+                          >
+                          <h2 style="font-size: 90px; padding-bottom: 10px;">{{userName[0]}}</h2>
+              
+                          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="text-dark mat-display-1 mx-3 my-2 p-2" >
+                        <div style="">
+                            <form>
+                                <div class="row">
+                                  <div class="col">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" disabled class="form-control" placeholder="First name" value="{{currentUser.firstName}}">
+                                  </div>
+                                  <div class="col">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" disabled class="form-control" placeholder="Last name" value="{{currentUser.lastName}}">
+                                  </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="col">
+                                      <label for="phoneNumber">Phone Number</label>
+                                      <input type="number" disabled class="form-control" placeholder="0244634634" value="{{currentUser.phoneNumber}}">
+                                    </div>
+                                    <div class="col">
+                                      <label for="email">E-mail</label>
+                                      <input type="email" disabled class="form-control" placeholder="johndoe@gmail.com" value="{{currentUser.email}}">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                      <label for="los">Line Of Service</label>
+                                      <input type="text" disabled class="form-control" placeholder="Not Assigned" value="{{currentUser.los}}">
+                                    </div>
+                                </div>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+

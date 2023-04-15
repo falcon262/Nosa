@@ -14,6 +14,7 @@ import snq from 'snq';
 @Component({
   selector: 'app-nav-items',
   templateUrl: 'nav-items.component.html',
+  styleUrls: ['./nav-items.component.scss']
 })
 export class NavItemsComponent {
   currentUser$: Observable<CurrentUserDto> = this.configState.getOne$('currentUser');

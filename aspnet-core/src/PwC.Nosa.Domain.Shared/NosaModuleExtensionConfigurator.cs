@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PwC.Nosa.Users;
+using System.ComponentModel.DataAnnotations;
 using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
@@ -67,5 +68,22 @@ public static class NosaModuleExtensionConfigurator
          * See the documentation for more:
          * https://docs.abp.io/en/abp/latest/Module-Entity-Extensions
          */
+        ObjectExtensionManager.Instance.Modules().ConfigureIdentity(identity => 
+        { 
+            identity.ConfigureUser(user => 
+            { 
+                user.AddOrUpdateProperty<string>(
+                   UserConsts.LOSPropertyName, 
+                   options => 
+                   { 
+                     options.Attributes.Add(new RequiredAttribute()); 
+                     options.Attributes.Add(
+                        new StringLengthAttribute(UserConsts.MaxLOSLength)
+                     ); 
+                   }
+                ); 
+               
+            }); 
+        });
     }
 }
