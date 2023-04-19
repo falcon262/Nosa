@@ -45,7 +45,7 @@ export class ChatComponent implements OnInit {
         mobileWarning.style.display = "none";
       }, 5000);
     } else {
-      canvas.style.width = "960px";
+      canvas.style.width = "1050px";
       canvas.style.height = "600px";
     }
     loadingBar.style.display = "block";

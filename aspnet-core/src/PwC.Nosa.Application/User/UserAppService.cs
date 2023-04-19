@@ -9,10 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.Identity;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using Volo.Abp.DependencyInjection;
 
 namespace PwC.Nosa.User
 {
-    public class UserAppService : NosaAppService
+    public class UserAppService : NosaAppService, IUserAppService, ITransientDependency
     {
         private readonly IdentityUserAppService _identityUserAppService;
         
@@ -45,7 +48,7 @@ namespace PwC.Nosa.User
 
         public async Task<string> GetUserSettingsByToken(string token)
         {
-            var result = "Result: ";
+            var result = "";
 
             using var httpClient = new HttpClient();
             httpClient.SetBearerToken(token);
@@ -61,6 +64,20 @@ namespace PwC.Nosa.User
             }
 
             return result;
+        }
+
+        public async Task UpdateUserLosAsync(Guid id, string los)
+        {
+            var user = await _identityUserRepository.GetAsync(id);
+
+
+            if (user.ExtraProperties.ContainsKey("LOS"))
+            {
+                user.ExtraProperties["LOS"] = los;
+            }
+
+            await _identityUserRepository.UpdateAsync(user);
+            await CurrentUnitOfWork.SaveChangesAsync();
         }
     }
 }

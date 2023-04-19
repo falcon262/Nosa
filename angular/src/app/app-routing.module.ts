@@ -64,7 +64,7 @@ const routes: Routes = [
         m => m.GdprCookieConsentModule
       ),
   },
-  { path: 'chats/:id', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
+  { path: 'chats/:filter', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
   { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
 ];
 

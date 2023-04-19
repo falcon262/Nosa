@@ -25,6 +25,15 @@ export class UserService {
       params: { token },
     },
     { apiName: this.apiName });
+  
+
+  updateUserLos = (id: string, los: string) =>
+    this.restService.request<any, void>({
+      method: 'PUT',
+      url: `/api/app/user/${id}/user-los`,
+      params: { los },
+    },
+    { apiName: this.apiName });
 
   constructor(private restService: RestService) {}
 }
